@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+body{
+font-family:'Poppins', sans-serif;
+background:linear-gradient(135deg,#667eea,#764ba2);
+margin:0;
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+}
+
+.container{
+width:800px;
+background:white;
+padding:40px;
+border-radius:20px;
+box-shadow:0 20px 50px rgba(0,0,0,0.2);
+animation:fadeIn 0.6s ease-in-out;
+}
+
+h1{
+text-align:center;
+margin-bottom:20px;
+}
+
+button{
+display:block;
+width:100%;
+margin:12px 0;
+padding:15px;
+border:none;
+border-radius:12px;
+background:#667eea;
+color:white;
+font-size:16px;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+background:#5a67d8;
+transform:scale(1.03);
+}
+
+.correct{
+background:#38a169 !important;
+animation:pop 0.4s ease;
+}
+
+.wrong{
+background:#e53e3e !important;
+}
+
+#progresso{
+width:100%;
+background:#e2e8f0;
+height:20px;
+border-radius:20px;
+margin:25px 0;
+overflow:hidden;
+}
+
+#barra{
+height:100%;
+width:0%;
+background:linear-gradient(90deg,#38a169,#48bb78);
+transition:0.4s;
+}
+
+@keyframes pop{
+0%{transform:scale(1);}
+50%{transform:scale(1.1);}
+100%{transform:scale(1);}
+}
+
+@keyframes fadeIn{
+from{opacity:0; transform:translateY(20px);}
+to{opacity:1; transform:translateY(0);}
+}

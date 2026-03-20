@@ -1,0 +1,222 @@
+[
+{
+"id":1,
+"nivel":"facil",
+"habilidade":"Porcentagem",
+"pergunta":"Um celular custa R$ 1200 e está com desconto de 15%. Qual o novo valor?",
+"alternativas":["R$ 1020","R$ 1050","R$ 1100","R$ 1000"],
+"correta":0,
+"dica":"15% de 1200 é 180."
+},
+{
+"id":2,
+"nivel":"facil",
+"habilidade":"Razão e proporção",
+"pergunta":"Se 3 cadernos custam R$ 30, quanto custam 5 cadernos?",
+"alternativas":["R$ 40","R$ 45","R$ 50","R$ 55"],
+"correta":2,
+"dica":"Descubra o valor de 1."
+},
+{
+"id":3,
+"nivel":"facil",
+"habilidade":"Média aritmética",
+"pergunta":"A média das notas 6, 8 e 10 é:",
+"alternativas":["7","8","9","8,5"],
+"correta":1,
+"dica":"Some e divida por 3."
+},
+{
+"id":4,
+"nivel":"facil",
+"habilidade":"Área",
+"pergunta":"A área de um quadrado de lado 5 cm é:",
+"alternativas":["20","25","15","30"],
+"correta":1,
+"dica":"lado x lado."
+},
+{
+"id":5,
+"nivel":"facil",
+"habilidade":"Equação simples",
+"pergunta":"Se x + 7 = 12, então x vale:",
+"alternativas":["3","4","5","6"],
+"correta":2,
+"dica":"Isole x."
+},
+
+{
+"id":6,
+"nivel":"medio",
+"habilidade":"Porcentagem composta",
+"pergunta":"Um produto de R$ 100 sofre aumento de 10% e depois mais 10%. O valor final é:",
+"alternativas":["R$120","R$121","R$122","R$119"],
+"correta":1,
+"dica":"Não é 20%, é composto."
+},
+{
+"id":7,
+"nivel":"medio",
+"habilidade":"Função do 1º grau",
+"pergunta":"Se f(x)=2x+3, qual o valor de f(4)?",
+"alternativas":["10","11","12","13"],
+"correta":1,
+"dica":"Substitua x."
+},
+{
+"id":8,
+"nivel":"medio",
+"habilidade":"Juros simples",
+"pergunta":"R$ 500 aplicados a 10% ao ano por 2 anos rendem:",
+"alternativas":["R$ 600","R$ 650","R$ 700","R$ 550"],
+"correta":0,
+"dica":"J=C.i.t"
+},
+{
+"id":9,
+"nivel":"medio",
+"habilidade":"Sistema linear",
+"pergunta":"Se x+y=10 e x=4, y vale:",
+"alternativas":["5","6","7","8"],
+"correta":1,
+"dica":"Substitua x."
+},
+{
+"id":10,
+"nivel":"medio",
+"habilidade":"Probabilidade",
+"pergunta":"Qual a probabilidade de tirar número par ao lançar um dado?",
+"alternativas":["1/2","1/3","1/6","2/3"],
+"correta":0,
+"dica":"3 números pares em 6."
+},
+
+{
+"id":11,
+"nivel":"dificil",
+"habilidade":"Função quadrática",
+"pergunta":"As raízes de x²-9 são:",
+"alternativas":["3","-3","3 e -3","9"],
+"correta":2,
+"dica":"x²=9."
+},
+{
+"id":12,
+"nivel":"dificil",
+"habilidade":"Logaritmo",
+"pergunta":"log10(100) é:",
+"alternativas":["1","2","10","100"],
+"correta":1,
+"dica":"10²=100."
+},
+{
+"id":13,
+"nivel":"dificil",
+"habilidade":"Progressão aritmética",
+"pergunta":"O 5º termo da PA (2,4,6,...) é:",
+"alternativas":["8","10","12","14"],
+"correta":1,
+"dica":"Soma 2."
+},
+{
+"id":14,
+"nivel":"dificil",
+"habilidade":"Análise combinatória",
+"pergunta":"De quantas formas 3 pessoas podem sentar em 3 cadeiras?",
+"alternativas":["3","6","9","12"],
+"correta":1,
+"dica":"3!"
+},
+{
+"id":15,
+"nivel":"dificil",
+"habilidade":"Trigonometria",
+"pergunta":"Sen 90° é:",
+"alternativas":["0","1","-1","0,5"],
+"correta":1,
+"dica":"Valor máximo."
+},
+{
+"id":16,
+"nivel":"facil",
+"habilidade":"Competência 1 - Grandezas e Medidas",
+"pergunta":"Um terreno mede 10m por 20m. Qual a área?",
+"alternativas":["100","200","300","400"],
+"correta":1,
+"dica":"Área = base x altura."
+},
+{
+"id":17,
+"nivel":"facil",
+"habilidade":"Competência 3 - Estatística",
+"pergunta":"A mediana de 2, 4, 6 é:",
+"alternativas":["2","4","6","5"],
+"correta":1,
+"dica":"Valor do meio."
+},
+{
+"id":18,
+"nivel":"facil",
+"habilidade":"Competência 2 - Álgebra",
+"pergunta":"Se 3x = 12, x é:",
+"alternativas":["2","3","4","5"],
+"correta":2,
+"dica":"Divida por 3."
+},
+
+{
+"id":19,
+"nivel":"medio",
+"habilidade":"Competência 4 - Funções",
+"pergunta":"Se f(x)=x+5, f(10) vale:",
+"alternativas":["10","15","5","20"],
+"correta":1,
+"dica":"Substitua x."
+},
+{
+"id":20,
+"nivel":"medio",
+"habilidade":"Competência 5 - Geometria",
+"pergunta":"Um triângulo tem base 10 e altura 6. A área é:",
+"alternativas":["60","30","40","50"],
+"correta":1,
+"dica":"(base x altura)/2"
+},
+{
+"id":21,
+"nivel":"medio",
+"habilidade":"Competência 3 - Probabilidade",
+"pergunta":"Chance de sair cara ao lançar moeda:",
+"alternativas":["0","1/2","1","1/3"],
+"correta":1,
+"dica":"2 possibilidades."
+},
+
+{
+"id":22,
+"nivel":"dificil",
+"habilidade":"Competência 2 - Função quadrática",
+"pergunta":"O vértice de y=x² é:",
+"alternativas":["(0,0)","(1,1)","(2,4)","(-1,1)"],
+"correta":0,
+"dica":"Origem."
+},
+{
+"id":23,
+"nivel":"dificil",
+"habilidade":"Competência 6 - Logaritmos",
+"pergunta":"log2(8) é:",
+"alternativas":["2","3","4","8"],
+"correta":1,
+"dica":"2³=8."
+},
+{
+"id":24,
+"nivel":"dificil",
+"habilidade":"Competência 7 - Análise combinatória",
+"pergunta":"Quantos anagramas tem a palavra AMOR?",
+"alternativas":["12","24","16","20"],
+"correta":1,
+"dica":"4!"
+}
+]

@@ -1,0 +1,19 @@
+<h2>Login</h2>
+<input type="text" id="nome" placeholder="Digite seu nome">
+<button onclick="login()">Entrar</button>
+
+<script>
+async function login(){
+let nome=document.getElementById("nome").value;
+
+let res=await fetch("/login",{
+method:"POST",
+headers:{"Content-Type":"application/json"},
+body:JSON.stringify({nome})
+});
+
+let user=await res.json();
+localStorage.setItem("usuario",JSON.stringify(user));
+window.location="dashboard.html";
+}
+</script>

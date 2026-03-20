@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MatemáticaENEM – Entrar / Cadastrar</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body class="auth-body">
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo" style="text-decoration:none;">
+        <span class="logo-icon">∑</span>
+        <span class="logo-text">Matemática<strong>ENEM</strong></span>
+      </a>
+    </div>
+  </nav>
+
+  <div class="auth-page">
+
+    <div class="auth-left">
+      <div class="auth-left-content">
+        <div class="auth-brand-badge">M.E.N.T.E</div>
+        <h2 class="auth-left-title">Aprenda Matemática do ENEM de um jeito que faz sentido</h2>
+        <p class="auth-left-desc">Crie sua conta gratuita e acompanhe seu progresso, pontuação e evolução em cada tópico.</p>
+        <div class="auth-features">
+          <div class="auth-feature"><span>✅</span> Questões reais do ENEM</div>
+          <div class="auth-feature"><span>✅</span> Resolução passo a passo</div>
+          <div class="auth-feature"><span>✅</span> Progresso salvo automaticamente</div>
+          <div class="auth-feature"><span>✅</span> Sistema de pontuação</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="auth-right">
+      <div class="auth-card">
+
+        <div class="auth-tabs">
+          <button class="auth-tab active" id="tabLogin" onclick="switchTab('login')">Entrar</button>
+          <button class="auth-tab" id="tabCadastro" onclick="switchTab('cadastro')">Criar conta</button>
+        </div>
+
+        <!-- LOGIN -->
+        <div id="formLogin">
+          <div class="form-group">
+            <label class="form-label">E-mail</label>
+            <input type="email" id="loginEmail" class="form-input" placeholder="seu@email.com" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Senha</label>
+            <div class="input-wrap">
+              <input type="password" id="loginSenha" class="form-input" placeholder="••••••••" />
+              <button type="button" class="toggle-pass" onclick="togglePass('loginSenha', this)">👁</button>
+            </div>
+          </div>
+          <div id="loginError" class="form-error" style="display:none"></div>
+          <button class="btn-auth" onclick="fazerLogin()">Entrar</button>
+          <p class="auth-switch">Não tem conta? <a href="#" onclick="switchTab('cadastro')">Cadastre-se grátis</a></p>
+        </div>
+
+        <!-- CADASTRO -->
+        <div id="formCadastro" style="display:none">
+          <div class="form-group">
+            <label class="form-label">Nome completo</label>
+            <input type="text" id="cadNome" class="form-input" placeholder="João da Silva" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">E-mail</label>
+            <input type="email" id="cadEmail" class="form-input" placeholder="seu@email.com" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Senha</label>
+            <div class="input-wrap">
+              <input type="password" id="cadSenha" class="form-input" placeholder="Mínimo 6 caracteres" />
+              <button type="button" class="toggle-pass" onclick="togglePass('cadSenha', this)">👁</button>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Confirmar senha</label>
+            <div class="input-wrap">
+              <input type="password" id="cadSenha2" class="form-input" placeholder="Repita a senha" />
+              <button type="button" class="toggle-pass" onclick="togglePass('cadSenha2', this)">👁</button>
+            </div>
+          </div>
+          <div id="cadError" class="form-error" style="display:none"></div>
+          <button class="btn-auth" onclick="fazerCadastro()">Criar minha conta</button>
+          <p class="auth-switch">Já tem conta? <a href="#" onclick="switchTab('login')">Entrar</a></p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+  <script src="firebase-config.js"></script>
+  <script src="auth.js"></script>
+</body>
+</html>

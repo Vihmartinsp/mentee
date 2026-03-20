@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>M.E.N.T.E – Questões ENEM</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body class="shell-body">
+<div class="shell">
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="shell-sidebar" id="shellSidebar">
+    <div class="sidebar-brand">
+      <span class="sb-icon">∑</span>
+      <div class="sb-text">
+        <span class="sb-title">M.E.N.T.E</span>
+        <span class="sb-sub">Matemática ENEM</span>
+      </div>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="nav-section-label">Estudo</div>
+      <a class="snav-item active" data-page="questoes" href="#"><i class="fas fa-search"></i><span>Busca de Questões</span></a>
+      <a class="snav-item" data-page="roteiro" href="#"><i class="fas fa-map"></i><span>Roteiro de Estudos</span></a>
+      <a class="snav-item" data-page="modulos" href="#"><i class="fas fa-book-open"></i><span>Módulos de Estudos</span></a>
+
+      <div class="nav-section-label" style="margin-top:8px">Prática</div>
+      <a class="snav-item" data-page="simulados" href="#"><i class="fas fa-pencil-alt"></i><span>Simulados</span></a>
+      <a class="snav-item" data-page="videoaulas" href="#"><i class="fas fa-play-circle"></i><span>Vídeo Aulas</span></a>
+
+      <div class="nav-section-label" style="margin-top:8px">Perfil</div>
+      <a class="snav-item" data-page="desempenho" href="#"><i class="fas fa-chart-bar"></i><span>Meu Desempenho</span></a>
+      <a class="snav-item" href="index.html"><i class="fas fa-home"></i><span>Página Inicial</span></a>
+    </nav>
+    <div class="sidebar-bottom">
+      <a class="snav-item snav-danger" href="#" id="sideLogoutBtn"><i class="fas fa-sign-out-alt"></i><span>Sair</span></a>
+    </div>
+  </aside>
+
+  <!-- ===== MAIN ===== -->
+  <div class="shell-main">
+    <header class="shell-topbar">
+      <button class="topbar-toggle" id="sideToggle"><i class="fas fa-bars"></i></button>
+      <div class="topbar-title" id="topbarTitle">Busca de Questões</div>
+      <div class="topbar-right">
+        <div class="score-pill"><i class="fas fa-star"></i><span id="scoreDisplay">0 pts</span></div>
+        <div class="user-wrap" id="userWrap">
+          <button class="user-btn" id="userBtn">
+            <span class="user-avatar" id="userAvatar">?</span>
+            <span class="user-name" id="userNameDisplay">Visitante</span>
+            <i class="fas fa-chevron-down" style="font-size:10px;opacity:.7;"></i>
+          </button>
+          <div class="user-dropdown" id="userDropdown">
+            <div class="dropdown-header">
+              <strong id="dropdownName">–</strong>
+              <small id="dropdownEmail">–</small>
+            </div>
+            <a href="#" class="dd-item" data-page="desempenho"><i class="fas fa-chart-bar"></i> Meu Desempenho</a>
+            <a href="#" class="dd-item dd-danger" id="dropLogoutBtn"><i class="fas fa-sign-out-alt"></i> Sair</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="shell-content">
+
+      <!-- ======== PAGE: QUESTÕES ======== -->
+      <div class="page active" id="pageQuestoes">
+        <div class="filter-card">
+          <div class="filter-row">
+            <div class="filter-group">
+              <label class="filter-label"><i class="fas fa-layer-group"></i> Área</label>
+              <select class="filter-select" id="filterArea"><option value="">Todas as áreas</option></select>
+            </div>
+            <div class="filter-group">
+              <label class="filter-label"><i class="fas fa-tag"></i> Tópico</label>
+              <select class="filter-select" id="filterTopico"><option value="">Todos os tópicos</option></select>
+            </div>
+            <div class="filter-group">
+              <label class="filter-label"><i class="fas fa-calendar"></i> Ano</label>
+              <select class="filter-select" id="filterAno"><option value="">Todos os anos</option></select>
+            </div>
+            <button class="btn-buscar" id="buscarBtn"><i class="fas fa-search"></i> Buscar</button>
+          </div>
+          <div class="filter-tabs-row" id="filterTabs">
+            <button class="ftab active" data-status="todas">Todas</button>
+            <button class="ftab" data-status="nao-respondidas">Não Respondidas</button>
+            <button class="ftab" data-status="acertei">✅ Acertei</button>
+            <button class="ftab" data-status="errei">❌ Errei</button>
+          </div>
+        </div>
+        <div id="questionListArea"></div>
+        <div id="activeQuestionArea" style="display:none">
+          <div class="qview-header">
+            <button class="btn-back" id="backToListBtn"><i class="fas fa-arrow-left"></i> Voltar</button>
+            <div class="qview-meta">
+              <span class="q-badge" id="qvTopic"></span>
+              <span class="q-badge q-badge-year" id="qvYear"></span>
+            </div>
+            <span class="qview-counter" id="qvCounter"></span>
+          </div>
+          <div class="qview-card">
+            <p class="qview-text" id="qvText"></p>
+            <div class="options-grid" id="qvOptions"></div>
+            <div class="feedback-box" id="qvFeedback" style="display:none">
+              <div class="feedback-header" id="qvFeedbackHeader"></div>
+              <div class="feedback-body" id="qvFeedbackBody"></div>
+              <div class="steps-section" id="qvStepsSection" style="display:none">
+                <div class="steps-title">Resolução passo a passo</div>
+                <div id="qvStepsList"></div>
+                <button class="btn-show-steps" id="qvShowStepsBtn">Ver resolução completa ↓</button>
+              </div>
+              <div class="feedback-actions">
+                <button class="btn-next" id="qvNextBtn">Próxima questão →</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ======== PAGE: ROTEIRO ======== -->
+      <div class="page" id="pageRoteiro" style="display:none">
+        <div class="page-hero">
+          <div class="page-hero-icon"><i class="fas fa-map"></i></div>
+          <div>
+            <h2>Roteiro de Estudos</h2>
+            <p>Plano organizado em 4 semanas para dominar a Matemática do ENEM</p>
+          </div>
+        </div>
+        <div id="roteiroContent"></div>
+      </div>
+
+      <!-- ======== PAGE: MÓDULOS ======== -->
+      <div class="page" id="pageModulos" style="display:none">
+        <div class="page-hero">
+          <div class="page-hero-icon"><i class="fas fa-book-open"></i></div>
+          <div>
+            <h2>Módulos de Estudos</h2>
+            <p>Teoria resumida + fórmulas + exercícios por tópico</p>
+          </div>
+        </div>
+        <div id="modulosContent"></div>
+      </div>
+
+      <!-- ======== PAGE: SIMULADOS ======== -->
+      <div class="page" id="pageSimulados" style="display:none">
+        <div class="page-hero">
+          <div class="page-hero-icon"><i class="fas fa-pencil-alt"></i></div>
+          <div>
+            <h2>Simulados</h2>
+            <p>Teste seus conhecimentos com questões sortidas do ENEM</p>
+          </div>
+        </div>
+        <div id="simuladosContent"></div>
+        <div id="simuladoAtivo" style="display:none"></div>
+      </div>
+
+      <!-- ======== PAGE: VÍDEO AULAS ======== -->
+      <div class="page" id="pageVideoaulas" style="display:none">
+        <div class="page-hero">
+          <div class="page-hero-icon"><i class="fas fa-play-circle"></i></div>
+          <div>
+            <h2>Vídeo Aulas</h2>
+            <p>Seleção de vídeos gratuitos dos melhores canais de Matemática</p>
+          </div>
+        </div>
+        <div id="videoContent"></div>
+      </div>
+
+      <!-- ======== PAGE: DESEMPENHO ======== -->
+      <div class="page" id="pageDesempenho" style="display:none">
+        <div class="perf-header">
+          <div class="perf-avatar" id="perfAvatar">?</div>
+          <div class="perf-info">
+            <h2 id="perfName">–</h2>
+            <p id="perfEmail">–</p>
+            <span class="perf-badge">Estudante ENEM</span>
+          </div>
+        </div>
+        <div class="stats-grid">
+          <div class="stat-card"><div class="stat-icon stat-pts"><i class="fas fa-star"></i></div><div class="stat-val" id="perfPontos">0</div><div class="stat-lbl">Pontos</div></div>
+          <div class="stat-card"><div class="stat-icon stat-ok"><i class="fas fa-check-circle"></i></div><div class="stat-val" id="perfAcertos">0</div><div class="stat-lbl">Acertos</div></div>
+          <div class="stat-card"><div class="stat-icon stat-err"><i class="fas fa-times-circle"></i></div><div class="stat-val" id="perfErros">0</div><div class="stat-lbl">Erros</div></div>
+          <div class="stat-card"><div class="stat-icon stat-pct"><i class="fas fa-percent"></i></div><div class="stat-val" id="perfPct">0%</div><div class="stat-lbl">Taxa de acerto</div></div>
+        </div>
+        <div class="topic-perf-card">
+          <h3 class="topic-perf-title">Desempenho por Tópico</h3>
+          <div id="topicPerfList"></div>
+        </div>
+      </div>
+
+    </div><!-- shell-content -->
+  </div><!-- shell-main -->
+</div><!-- shell -->
+
+<div class="toast" id="toast"></div>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+<script src="firebase-config.js"></script>
+<script src="auth.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
