@@ -1,0 +1,10 @@
+{
+  "name": "mentee",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Protótipo educacional de Matemática ENEM",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
