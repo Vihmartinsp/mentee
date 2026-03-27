@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MatemáticaENEM - Aprenda de um jeito diferente</title>
+  <title>M.E.N.T.E - Aprenda de um jeito diferente</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 </head>
@@ -13,7 +13,7 @@
     <div class="nav-container">
       <div class="nav-logo">
         <span class="logo-icon">∑</span>
-        <span class="logo-text">Matemática<strong>ENEM</strong></span>
+        <span class="logo-text">M.E.N.T.E</span>
       </div>
       <div class="nav-links">
         <a href="#sobre">Sobre</a>
@@ -81,12 +81,13 @@
       </div>
       <div class="floating-badge badge-1">+10 pts</div>
       <div class="floating-badge badge-2">Ótimo! 🎯</div>
+      <div class="floating-square" aria-hidden="true"></div>
     </div>
   </section>
 
   <section class="sobre" id="sobre">
     <div class="section-container">
-      <div class="section-label">Nosso objetivo</div>
+      <div class="section-label">NOSSO OBJETIVO</div>
       <h2 class="section-title">Por que criamos isso?</h2>
       <p class="section-desc">
         Este projeto é um <strong>protótipo funcional</strong> de site educacional desenvolvido para ajudar
@@ -143,38 +144,30 @@
     <div class="section-container">
       <div class="section-label">Como funciona</div>
       <h2 class="section-title">Uma experiência diferente de estudar</h2>
-      <div class="steps">
-        <div class="step">
-          <div class="step-number">01</div>
-          <div class="step-content">
-            <h3>Escolha um tópico</h3>
-            <p>Selecione entre funções, geometria, probabilidade, porcentagem e muito mais.</p>
-          </div>
-        </div>
-        <div class="step-arrow">→</div>
-        <div class="step">
-          <div class="step-number">02</div>
-          <div class="step-content">
-            <h3>Leia a questão</h3>
-            <p>O enunciado aparece com destaques visuais nas informações mais importantes.</p>
-          </div>
-        </div>
-        <div class="step-arrow">→</div>
-        <div class="step">
-          <div class="step-number">03</div>
-          <div class="step-content">
-            <h3>Responda e aprenda</h3>
-            <p>Escolha sua alternativa e receba a resolução guiada passo a passo.</p>
-          </div>
-        </div>
-        <div class="step-arrow">→</div>
-        <div class="step">
-          <div class="step-number">04</div>
-          <div class="step-content">
-            <h3>Acumule pontos</h3>
-            <p>Cada acerto vale pontos. Acompanhe sua evolução e tente melhorar sempre.</p>
-          </div>
-        </div>
+      <div class="como-funciona-grid">
+        <article class="cf-step-card">
+          <div class="cf-step-number">01</div>
+          <h3>Escolha um tópico</h3>
+          <p>Selecione entre funções, geometria, probabilidade, porcentagem e muito mais.</p>
+        </article>
+        <span class="cf-arrow" aria-hidden="true">→</span>
+        <article class="cf-step-card">
+          <div class="cf-step-number">02</div>
+          <h3>Leia a questão</h3>
+          <p>O enunciado aparece com destaques visuais nas informações mais importantes.</p>
+        </article>
+        <span class="cf-arrow" aria-hidden="true">→</span>
+        <article class="cf-step-card">
+          <div class="cf-step-number">03</div>
+          <h3>Responda e aprenda</h3>
+          <p>Escolha sua alternativa e receba a resolução guiada passo a passo.</p>
+        </article>
+        <span class="cf-arrow" aria-hidden="true">→</span>
+        <article class="cf-step-card">
+          <div class="cf-step-number">04</div>
+          <h3>Acumule pontos</h3>
+          <p>Cada acerto vale pontos. Acompanhe sua evolução e tente melhorar sempre.</p>
+        </article>
       </div>
     </div>
   </section>
@@ -206,10 +199,10 @@
     <div class="footer-container">
       <div class="footer-logo">
         <span class="logo-icon">∑</span>
-        <span class="logo-text">Matemática<strong>ENEM</strong></span>
+        <span class="logo-text">M.E.N.T.E</span>
       </div>
       <p class="footer-desc">Protótipo educacional desenvolvido como Trabalho de Conclusão de Curso.</p>
-      <p class="footer-copy">© 2024 MatemáticaENEM · Projeto Acadêmico</p>
+      <p class="footer-copy">© 2024 M.E.N.T.E · Projeto Acadêmico</p>
     </div>
   </footer>
 
@@ -217,6 +210,47 @@
   <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
   <script src="firebase-config.js"></script>
   <script>
+    // Navegação suave para links internos e transição suave para redirecionamentos.
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener("click", (event) => {
+        const targetId = link.getAttribute("href");
+        if (!targetId || targetId === "#") return;
+        const targetEl = document.querySelector(targetId);
+        if (!targetEl) return;
+        event.preventDefault();
+        targetEl.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    });
+
+    document.querySelectorAll('.nav-links a[href$=".html"]').forEach(link => {
+      link.addEventListener("click", (event) => {
+        const href = link.getAttribute("href");
+        if (!href) return;
+        event.preventDefault();
+        document.body.classList.add("page-exit");
+        setTimeout(() => {
+          window.location.href = href;
+        }, 220);
+      });
+    });
+
+    // Fallback JS animation para garantir o efeito flutuante visível no badge "Ótimo! 🎯".
+    const badgeOtimo = document.querySelector(".badge-2");
+    if (badgeOtimo && badgeOtimo.animate) {
+      badgeOtimo.animate(
+        [
+          { transform: "translateY(0px)" },
+          { transform: "translateY(-14px)" },
+          { transform: "translateY(0px)" }
+        ],
+        {
+          duration: 5000,
+          iterations: Infinity,
+          easing: "ease-in-out"
+        }
+      );
+    }
+
     fbAuth.onAuthStateChanged(user => {
       const link = document.querySelector(".nav-login");
       if (!link) return;

@@ -1,19 +1,19 @@
-<h2>Login</h2>
-<input type="text" id="nome" placeholder="Digite seu nome">
-<button onclick="login()">Entrar</button>
-
-<script>
-async function login(){
-let nome=document.getElementById("nome").value;
-
-let res=await fetch("/login",{
-method:"POST",
-headers:{"Content-Type":"application/json"},
-body:JSON.stringify({nome})
-});
-
-let user=await res.json();
-localStorage.setItem("usuario",JSON.stringify(user));
-window.location="dashboard.html";
-}
-</script>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Redirecionando para Entrar</title>
+  <meta http-equiv="refresh" content="0; url=auth.html" />
+  <style>
+    body { font-family: Inter, Arial, sans-serif; margin: 0; display: grid; place-items: center; min-height: 100vh; background: #f4f7fc; color: #183b69; }
+    a { color: #2f62e2; font-weight: 600; }
+  </style>
+</head>
+<body>
+  <p>Redirecionando para a tela de entrar... <a href="auth.html">Clique aqui</a>.</p>
+  <script>
+    window.location.replace("auth.html");
+  </script>
+</body>
+</html>
