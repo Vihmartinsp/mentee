@@ -309,6 +309,7 @@ html {
   bottom: 12px;
   left: -14px;
   color: #19a55f;
+  animation: floatBadge 5s ease-in-out infinite;
 }
 
 .floating-square {
