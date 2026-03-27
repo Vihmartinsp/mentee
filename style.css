@@ -596,15 +596,15 @@ html {
 }
 
 .aviso-prototipo {
-  background: #eef1f5;
-  padding: 28px 0;
+  background: #eceff3 !important;
+  padding: 28px 0 !important;
 }
 
 .aviso-box {
   max-width: 700px;
   margin: 0 auto;
-  background: #fff6ea;
-  border: 1px solid #f4c28f;
+  background: #fff6ea !important;
+  border: 1px solid #f4c28f !important;
   border-radius: 10px;
   padding: 12px 16px;
   display: flex;
@@ -625,15 +625,19 @@ html {
 }
 
 .cta-section {
-  background: linear-gradient(100deg, #1f4487 0%, #2f62d8 100%);
-  padding: 56px 0;
+  background: linear-gradient(100deg, #1f4487 0%, #2f62d8 100%) !important;
+  padding: 60px 0 !important;
   text-align: center;
+}
+
+.cta-section .section-container {
+  max-width: 860px;
 }
 
 .cta-section h2 {
   margin: 0 0 10px;
   color: #f0f5ff;
-  font-size: clamp(30px, 4vw, 52px);
+  font-size: clamp(34px, 4vw, 54px);
 }
 
 .cta-section p {
@@ -644,9 +648,9 @@ html {
 
 .btn-large {
   margin-top: 24px;
-  padding: 12px 24px;
-  font-size: 16px;
-  border-radius: 10px;
+  padding: 12px 24px !important;
+  font-size: 18px !important;
+  border-radius: 10px !important;
 }
 
 /* leve animação ao sair da página */
