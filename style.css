@@ -495,6 +495,60 @@ html {
   border-color: #c5d3e6;
 }
 
+/* seção COMO FUNCIONA */
+.funcionalidades {
+  background: #ffffff;
+}
+
+.funcionalidades .section-label {
+  color: #2f62e2;
+}
+
+.funcionalidades .section-title {
+  margin-bottom: 22px;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr);
+  gap: 12px;
+  align-items: center;
+}
+
+.step {
+  background: #e9eff9;
+  border: 1px solid #cfdcf1;
+  border-radius: 10px;
+  padding: 16px;
+  min-height: 190px;
+}
+
+.step-number {
+  font-size: 24px;
+  font-weight: 800;
+  color: #163a68;
+  margin-bottom: 8px;
+}
+
+.step-content h3 {
+  margin: 0 0 8px;
+  color: #173d70;
+  font-size: 20px;
+}
+
+.step-content p {
+  margin: 0;
+  color: #446084;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.step-arrow {
+  color: #6e96e8;
+  font-size: 26px;
+  font-weight: 700;
+}
+
 .footer {
   border-top: 1px solid #e8ebf3;
   padding: 28px 0;
@@ -575,5 +629,17 @@ body.page-exit {
 
   .pilares-grid {
     grid-template-columns: 1fr;
+  }
+
+  .steps {
+    grid-template-columns: 1fr;
+  }
+
+  .step {
+    min-height: auto;
+  }
+
+  .step-arrow {
+    display: none;
   }
 }
