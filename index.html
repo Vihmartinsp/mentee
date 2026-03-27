@@ -218,6 +218,30 @@
   <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
   <script src="firebase-config.js"></script>
   <script>
+    // Navegação suave para links internos e transição suave para redirecionamentos.
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener("click", (event) => {
+        const targetId = link.getAttribute("href");
+        if (!targetId || targetId === "#") return;
+        const targetEl = document.querySelector(targetId);
+        if (!targetEl) return;
+        event.preventDefault();
+        targetEl.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    });
+
+    document.querySelectorAll('.nav-links a[href$=".html"]').forEach(link => {
+      link.addEventListener("click", (event) => {
+        const href = link.getAttribute("href");
+        if (!href) return;
+        event.preventDefault();
+        document.body.classList.add("page-exit");
+        setTimeout(() => {
+          window.location.href = href;
+        }, 220);
+      });
+    });
+
     fbAuth.onAuthStateChanged(user => {
       const link = document.querySelector(".nav-login");
       if (!link) return;
