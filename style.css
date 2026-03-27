@@ -386,6 +386,11 @@ html {
   background: #f1f4f9;
 }
 
+.sobre .section-container {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
 .section-label {
   color: #2f62e2;
   font-weight: 700;
@@ -450,6 +455,7 @@ html {
   border-radius: 12px;
   padding: 18px 16px;
   box-shadow: 0 2px 8px rgba(20, 48, 94, 0.06);
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
 }
 
 .pilar-icon {
@@ -468,6 +474,25 @@ html {
   color: #425b7d;
   line-height: 1.45;
   font-size: 15px;
+}
+
+/* refinamento específico da seção SOBRE */
+.sobre .section-title {
+  margin-bottom: 16px;
+}
+
+.sobre .section-desc strong {
+  color: #163b6d;
+}
+
+.sobre .objetivo-box {
+  box-shadow: 0 8px 20px rgba(23, 59, 108, 0.08);
+}
+
+.sobre .pilar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(20, 48, 94, 0.12);
+  border-color: #c5d3e6;
 }
 
 .footer {
