@@ -242,6 +242,23 @@
       });
     });
 
+    // Fallback JS animation para garantir o efeito flutuante visível no badge "Ótimo! 🎯".
+    const badgeOtimo = document.querySelector(".badge-2");
+    if (badgeOtimo && badgeOtimo.animate) {
+      badgeOtimo.animate(
+        [
+          { transform: "translateY(0px)" },
+          { transform: "translateY(-14px)" },
+          { transform: "translateY(0px)" }
+        ],
+        {
+          duration: 2800,
+          iterations: Infinity,
+          easing: "ease-in-out"
+        }
+      );
+    }
+
     fbAuth.onAuthStateChanged(user => {
       const link = document.querySelector(".nav-login");
       if (!link) return;

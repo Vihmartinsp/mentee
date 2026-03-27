@@ -309,7 +309,7 @@ html {
   bottom: 12px;
   left: -14px;
   color: #19a55f;
-  animation: floatBadgeStrong 2.8s ease-in-out infinite;
+  animation: floatBadgeStrong 2.8s ease-in-out infinite !important;
   will-change: transform, box-shadow;
 }
 
@@ -460,9 +460,13 @@ body.page-exit {
     font-size: 14px;
   }
 
-  .floating-badge,
   .floating-square {
     display: none;
+  }
+
+  .floating-badge {
+    font-size: 13px;
+    padding: 8px 12px;
   }
 
   .section-container,
