@@ -382,22 +382,92 @@ html {
   padding: 52px 0;
 }
 
+.sobre {
+  background: #f1f4f9;
+}
+
 .section-label {
-  color: #4a5b78;
+  color: #2f62e2;
   font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
   margin-bottom: 8px;
 }
 
 .section-title {
   margin: 0 0 14px;
-  font-size: clamp(30px, 3.5vw, 44px);
-  color: #1f3151;
+  font-size: clamp(28px, 3vw, 42px);
+  color: #183b69;
 }
 
 .section-desc {
-  max-width: 900px;
-  line-height: 1.6;
-  color: var(--text-muted);
+  max-width: 880px;
+  line-height: 1.55;
+  color: #324a6b;
+  font-size: 16px;
+}
+
+.objetivo-box {
+  margin-top: 28px;
+  background: #e7edf7;
+  border: 1px solid #d4deed;
+  border-radius: 16px;
+  padding: 22px 24px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.objetivo-icon {
+  font-size: 24px;
+  line-height: 1;
+}
+
+.objetivo-text h3 {
+  margin: 0 0 8px;
+  color: #163b6d;
+  font-size: 20px;
+}
+
+.objetivo-text p {
+  margin: 0;
+  color: #2f4869;
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.pilares-grid {
+  margin-top: 28px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.pilar {
+  background: #ffffff;
+  border: 1px solid #d7dfeb;
+  border-radius: 12px;
+  padding: 18px 16px;
+  box-shadow: 0 2px 8px rgba(20, 48, 94, 0.06);
+}
+
+.pilar-icon {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.pilar h4 {
+  margin: 0 0 8px;
+  color: #173b6c;
+  font-size: 20px;
+}
+
+.pilar p {
+  margin: 0;
+  color: #425b7d;
+  line-height: 1.45;
+  font-size: 15px;
 }
 
 .footer {
@@ -472,5 +542,13 @@ body.page-exit {
   .section-container,
   .footer-container {
     padding: 0 16px;
+  }
+
+  .objetivo-box {
+    padding: 16px;
+  }
+
+  .pilares-grid {
+    grid-template-columns: 1fr;
   }
 }
