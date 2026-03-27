@@ -508,14 +508,14 @@ html {
   margin-bottom: 22px;
 }
 
-.steps {
+.como-funciona-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr);
   gap: 12px;
   align-items: center;
 }
 
-.step {
+.cf-step-card {
   background: #e9eff9;
   border: 1px solid #cfdcf1;
   border-radius: 10px;
@@ -523,27 +523,27 @@ html {
   min-height: 190px;
 }
 
-.step-number {
-  font-size: 24px;
+.cf-step-number {
+  font-size: 37px;
   font-weight: 800;
   color: #163a68;
   margin-bottom: 8px;
 }
 
-.step-content h3 {
+.cf-step-card h3 {
   margin: 0 0 8px;
   color: #173d70;
   font-size: 20px;
 }
 
-.step-content p {
+.cf-step-card p {
   margin: 0;
   color: #446084;
   font-size: 15px;
   line-height: 1.5;
 }
 
-.step-arrow {
+.cf-arrow {
   color: #6e96e8;
   font-size: 26px;
   font-weight: 700;
@@ -631,15 +631,15 @@ body.page-exit {
     grid-template-columns: 1fr;
   }
 
-  .steps {
+  .como-funciona-grid {
     grid-template-columns: 1fr;
   }
 
-  .step {
+  .cf-step-card {
     min-height: auto;
   }
 
-  .step-arrow {
+  .cf-arrow {
     display: none;
   }
 }
