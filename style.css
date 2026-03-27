@@ -215,6 +215,7 @@ html {
 
 .hero-visual {
   position: relative;
+  animation: floatExample 6s ease-in-out infinite;
 }
 
 .hero-card {
@@ -325,6 +326,16 @@ html {
   }
   50% {
     transform: translateY(-10px);
+  }
+}
+
+@keyframes floatExample {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
   }
 }
 
