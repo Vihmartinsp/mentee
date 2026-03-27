@@ -309,7 +309,7 @@ html {
   bottom: 12px;
   left: -14px;
   color: #19a55f;
-  animation: floatBadgeStrong 2.8s ease-in-out infinite !important;
+  animation: floatBadgeStrong 5s ease-in-out infinite !important;
   will-change: transform, box-shadow;
 }
 
