@@ -309,7 +309,8 @@ html {
   bottom: 12px;
   left: -14px;
   color: #19a55f;
-  animation: floatBadge 5s ease-in-out infinite;
+  animation: floatBadgeStrong 2.8s ease-in-out infinite;
+  will-change: transform, box-shadow;
 }
 
 .floating-square {
@@ -351,6 +352,18 @@ html {
   }
   50% {
     transform: translateY(-8px);
+  }
+}
+
+@keyframes floatBadgeStrong {
+  0%,
+  100% {
+    transform: translateY(0);
+    box-shadow: 0 8px 18px rgba(10, 28, 73, 0.25);
+  }
+  50% {
+    transform: translateY(-14px);
+    box-shadow: 0 14px 24px rgba(10, 28, 73, 0.32);
   }
 }
 
