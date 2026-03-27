@@ -215,7 +215,6 @@ html {
 
 .hero-visual {
   position: relative;
-  animation: floatExample 6s ease-in-out infinite;
 }
 
 .hero-card {
@@ -224,6 +223,10 @@ html {
   border-radius: 22px;
   box-shadow: 0 16px 35px rgba(14, 29, 74, 0.36);
   padding: 20px 18px;
+}
+
+.hero-card.floating {
+  animation: floatCard 5s ease-in-out infinite;
 }
 
 .card-header {
@@ -299,6 +302,7 @@ html {
   top: -16px;
   right: -12px;
   color: #2f62e2;
+  animation: floatBadge 5s ease-in-out infinite;
 }
 
 .badge-2 {
@@ -329,13 +333,23 @@ html {
   }
 }
 
-@keyframes floatExample {
+@keyframes floatCard {
   0%,
   100% {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(8px);
+    transform: translateY(-14px);
+  }
+}
+
+@keyframes floatBadge {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
   }
 }
 
