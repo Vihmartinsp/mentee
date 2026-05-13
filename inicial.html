@@ -196,6 +196,19 @@
 </div><!-- shell -->
 
 <div class="toast" id="toast"></div>
+<div class="auth-gate-modal" id="authGateModal" aria-hidden="true">
+  <div class="auth-gate-card" role="dialog" aria-modal="true" aria-labelledby="authGateTitle">
+    <button class="auth-gate-close" id="authGateClose" aria-label="Fechar">×</button>
+    <div class="auth-gate-icon"><i class="fas fa-lock"></i></div>
+    <h2 id="authGateTitle">Crie sua conta gratuita</h2>
+    <p id="authGateText">Entre para salvar progresso e acessar todas as questões.</p>
+    <div class="auth-gate-actions">
+      <button class="btn-auth-gate" id="authGateSignup">Entrar ou cadastrar</button>
+      <button class="btn-auth-gate-secondary" id="authGateLater">Continuar prévia</button>
+    </div>
+  </div>
+</div>
+
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
