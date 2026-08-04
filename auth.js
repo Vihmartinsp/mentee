@@ -101,7 +101,9 @@ function fazerCadastro() {
         pontos:      0,
         acertos:     0,
         erros:       0,
-        respondidas: 0
+        respondidas: 0,
+        respostas:    {},
+        topicos:      {}
       });
     })
     .then(() => {
@@ -120,7 +122,7 @@ function fazerCadastro() {
 function salvarProgresso(dados) {
   const user = fbAuth.currentUser;
   if (!user) return;
-  fbDB.collection("usuarios").doc(user.uid).update(dados).catch(() => {});
+  fbDB.collection("usuarios").doc(user.uid).set(dados, { merge: true }).catch(() => {});
 }
 
 // ---------- Carregar progresso do Firestore ----------
