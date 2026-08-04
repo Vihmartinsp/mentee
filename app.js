@@ -34,6 +34,28 @@ function $(id) {
   return document.getElementById(id);
 }
 
+function chaveCachePerfil(uid = usuarioAtual?.uid) {
+  return uid ? `mente-perfil-${uid}` : null;
+}
+
+function salvarPerfilLocal(uid = usuarioAtual?.uid) {
+  const chave = chaveCachePerfil(uid);
+  if (!chave) return;
+  localStorage.setItem(chave, JSON.stringify(perfil));
+}
+
+function carregarPerfilLocal(uid) {
+  const chave = chaveCachePerfil(uid);
+  if (!chave) return null;
+  try {
+    const salvo = localStorage.getItem(chave);
+    return salvo ? JSON.parse(salvo) : null;
+  } catch (error) {
+    localStorage.removeItem(chave);
+    return null;
+  }
+}
+
 function atualizarHeader() {
   const nome = perfil.nome || usuarioAtual?.displayName || "Estudante";
   const email = perfil.email || usuarioAtual?.email || "";
@@ -81,18 +103,43 @@ function atualizarDesempenhoTopicos() {
 async function salvarPerfil() {
   if (!usuarioAtual) return;
   const dados = { ...perfil, atualizadoEm: new Date().toISOString(), medalha: medalhaPorPontos(perfil.pontos) };
-  await fbDB.collection("usuarios").doc(usuarioAtual.uid).set(dados, { merge: true });
+  perfil = dados;
+  salvarPerfilLocal(usuarioAtual.uid);
+
+  try {
+    await fbDB.collection("usuarios").doc(usuarioAtual.uid).set(dados, { merge: true });
+  } catch (error) {
+    console.warn("Não foi possível sincronizar o progresso com o Firestore. Mantendo cópia local.", error);
+  }
 }
 
 async function carregarPerfil(user) {
   const ref = fbDB.collection("usuarios").doc(user.uid);
-  const snap = await ref.get();
+  const cacheLocal = carregarPerfilLocal(user.uid);
+
   perfil = criarPerfilPadrao({
-    ...(snap.exists ? snap.data() : {}),
-    nome: snap.exists ? (snap.data().nome || user.displayName || user.email) : (user.displayName || user.email),
-    email: user.email || ""
+    ...cacheLocal,
+    nome: cacheLocal?.nome || user.displayName || user.email,
+    email: user.email || cacheLocal?.email || ""
   });
-  await ref.set(perfil, { merge: true });
+
+  try {
+    const snap = await ref.get();
+    const dadosRemotos = snap.exists ? snap.data() : {};
+    perfil = criarPerfilPadrao({
+      ...perfil,
+      ...dadosRemotos,
+      respostas: { ...(perfil.respostas || {}), ...(dadosRemotos.respostas || {}) },
+      topicos: { ...(perfil.topicos || {}), ...(dadosRemotos.topicos || {}) },
+      nome: dadosRemotos.nome || perfil.nome || user.displayName || user.email,
+      email: user.email || dadosRemotos.email || perfil.email || ""
+    });
+    salvarPerfilLocal(user.uid);
+    await ref.set(perfil, { merge: true });
+  } catch (error) {
+    console.warn("Não foi possível carregar os dados remotos. Usando dados locais desta conta.", error);
+  }
+
   atualizarHeader();
 }
 
