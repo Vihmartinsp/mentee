@@ -256,3 +256,279 @@ button, input, select { font: inherit; }
   .hero-stats { flex-wrap: wrap; }
   .question-card { grid-template-columns: 1fr; }
 }
+
+/* ===== Ajuste visual solicitado para o topo da homepage ===== */
+.home-body {
+  background: #06305f;
+  color: #1c2740;
+}
+.home-body .navbar {
+  position: relative;
+  background: #e7edf2;
+  border-bottom: 0;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+.home-body .nav-container {
+  width: 100%;
+  max-width: none;
+  height: 70px;
+  padding: 0 28px;
+}
+.home-body .mente-logo {
+  width: 60px;
+  height: 62px;
+  display: grid;
+  place-items: center;
+  gap: 0;
+  color: #15213b;
+  text-decoration: none;
+}
+.home-body .mente-logo-art {
+  width: 54px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  position: relative;
+  border: 2px solid #58637a;
+  border-radius: 4px 4px 10px 10px;
+  background:
+    linear-gradient(65deg, transparent 47%, #58637a 48% 52%, transparent 53%),
+    linear-gradient(-65deg, transparent 47%, #58637a 48% 52%, transparent 53%),
+    #f8fafc;
+  box-shadow: inset 0 -8px 0 #d7dde8;
+  font-size: 0;
+}
+.home-body .mente-logo-art::before,
+.home-body .mente-logo-art::after {
+  content: "";
+  position: absolute;
+  bottom: 8px;
+  width: 14px;
+  height: 24px;
+  border: 2px solid #58637a;
+  border-bottom: 0;
+  background: #eef2f7;
+}
+.home-body .mente-logo-art::before { left: 8px; transform: rotate(-18deg); }
+.home-body .mente-logo-art::after { right: 8px; transform: rotate(18deg); }
+.home-body .mente-logo-text {
+  margin-top: -9px;
+  padding: 1px 5px;
+  border-radius: 3px;
+  background: #f8fafc;
+  font-size: 10px;
+  line-height: 1;
+  font-weight: 900;
+  letter-spacing: .16em;
+  color: #1d2740;
+  box-shadow: 0 1px 4px rgba(15,23,42,.18);
+}
+.home-body .nav-links {
+  gap: 8px;
+  align-items: center;
+}
+.home-body .nav-links a:not(.nav-login):not(.nav-cta) {
+  color: #1d2740;
+  font-size: 19px;
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.home-body .nav-login,
+.home-body .nav-cta {
+  border-radius: 7px;
+  padding: 5px 9px;
+  color: #fff !important;
+  background: #4d5d91;
+  box-shadow: none;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+.home-body .hero {
+  width: 100%;
+  min-height: 445px;
+  margin: 0;
+  padding: 28px 0 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: linear-gradient(90deg, #052c57 0%, #0a46c7 100%);
+}
+.home-body .hero-content {
+  width: min(724px, calc(100% - 32px));
+  min-height: 396px;
+  display: grid;
+  grid-template-columns: 1.12fr .88fr;
+  gap: 24px;
+  align-items: center;
+  position: relative;
+  padding: 48px 30px 18px;
+  border: 2px solid #1b294b;
+  border-top-width: 23px;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 10px 24px rgba(0,0,0,.16);
+}
+.home-body .hero-content::before {
+  content: "●  ▪  ▲";
+  position: absolute;
+  top: -19px;
+  left: 16px;
+  color: #ffffff;
+  font-size: 12px;
+  letter-spacing: 6px;
+  line-height: 1;
+}
+.home-body .hero-content::after {
+  content: "";
+  position: absolute;
+  top: -13px;
+  left: 72px;
+  right: 16px;
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.76);
+}
+.home-body .hero-text { min-width: 0; }
+.home-body .hero-badge {
+  margin-left: 52px;
+  padding: 4px 10px;
+  border-radius: 9px;
+  background: #d2d8e6;
+  color: #26334f;
+  font-size: 16px;
+  font-weight: 400;
+  white-space: nowrap;
+}
+.home-body .hero-title {
+  margin: 4px 0 6px;
+  font-size: 36px;
+  line-height: 1.16;
+  letter-spacing: .01em;
+  font-weight: 500;
+  color: #1e2946;
+}
+.home-body .highlight {
+  display: inline-block;
+  color: #55729c;
+  font-weight: 400;
+}
+.home-body .hero-subtitle {
+  max-width: 322px;
+  margin: 0 0 8px;
+  color: #1e2946;
+  font-size: 16px;
+  line-height: 1.12;
+}
+.home-body .hero-actions {
+  margin: 6px 0 8px;
+  gap: 16px;
+  align-items: center;
+}
+.home-body .btn-primary,
+.home-body .btn-secondary {
+  border-radius: 7px;
+  padding: 3px 8px;
+  color: #fff !important;
+  background: #4d5d91;
+  box-shadow: none;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+.home-body .btn-primary svg {
+  width: 18px;
+  height: 18px;
+}
+.home-body .hero-stats {
+  margin-top: 2px;
+  gap: 8px;
+  color: #4d5d91;
+}
+.home-body .stat { gap: 1px; }
+.home-body .stat-num {
+  color: #4d5d91;
+  font-size: 25px;
+  line-height: 1;
+  font-weight: 500;
+}
+.home-body .stat-label {
+  color: #4d5d91;
+  font-size: 14px;
+  font-weight: 400;
+}
+.home-body .stat-divider {
+  width: 2px;
+  height: 48px;
+  background: #93a2be;
+}
+.home-body .hero-visual {
+  min-height: 310px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.home-body .hero-card {
+  width: 236px;
+  padding: 14px 12px;
+  border: 1px solid #e4e9f2;
+  border-radius: 16px;
+  background: rgba(249,251,255,.72);
+  box-shadow: 12px 12px 16px rgba(34,70,96,.28);
+  filter: blur(.45px);
+}
+.home-body .card-header { margin-bottom: 12px; gap: 8px; }
+.home-body .card-tag {
+  padding: 5px 9px;
+  font-size: 10px;
+  background: #dfe7fb;
+  color: #4b6ea8;
+}
+.home-body .card-question {
+  color: #68758a;
+  font-size: 13px;
+  line-height: 1.35;
+  font-weight: 700;
+}
+.home-body .card-hint {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 8px;
+  background: #fff0b8;
+  color: #9b7122;
+  font-size: 12px;
+  font-weight: 800;
+}
+.home-body .option-preview {
+  margin-top: 8px;
+  padding: 8px;
+  border-radius: 7px;
+  background: #e8edf4;
+  color: #647085;
+  font-size: 12px;
+}
+.home-body .correct-preview {
+  background: #d7f0dd;
+  color: #249453;
+}
+.home-body .floating-badge {
+  padding: 7px 12px;
+  border-radius: 12px;
+  background: #ffffff;
+  color: #4c78bf;
+  font-size: 12px;
+  box-shadow: 0 5px 12px rgba(17,24,39,.22);
+}
+.home-body .badge-1 { top: 35px; right: 20px; left: auto; }
+.home-body .badge-2 { left: 12px; right: auto; bottom: 28px; color: #249453; }
+
+@media (max-width: 780px) {
+  .home-body .nav-container { padding: 0 14px; }
+  .home-body .nav-links a:not(.nav-login):not(.nav-cta) { display: none; }
+  .home-body .hero-content { grid-template-columns: 1fr; padding-top: 42px; }
+  .home-body .hero-badge { margin-left: 0; white-space: normal; }
+  .home-body .hero-visual { min-height: 250px; }
+}
