@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 100" role="img" aria-labelledby="title desc">
+  <title id="title">Logo M.E.N.T.E</title>
+  <desc id="desc">Livro aberto com lápis e réguas acima do nome M.E.N.T.E.</desc>
+  <rect width="120" height="100" fill="#e7edf2"/>
+  <g stroke="#2f3854" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M24 57c12-8 24-8 36 0 12-8 24-8 36 0v16c-12-7-24-7-36 0-12-7-24-7-36 0z" fill="#f8fafc"/>
+    <path d="M60 57v16"/>
+    <path d="M34 62c7-2 13-1 20 2M66 64c7-3 14-4 22-2" stroke-width="2"/>
+    <path d="M60 15v39" fill="none"/>
+    <path d="M45 18l15-9 15 9-15 10z" fill="#f8fafc"/>
+    <path d="M36 22l10 31M84 22L74 53"/>
+    <path d="M31 28l17-8M89 28l-17-8"/>
+    <path d="M51 35h18M48 43h24" stroke-width="2"/>
+  </g>
+  <g fill="#2f3854" font-family="Georgia, serif" font-weight="700" font-size="10">
+    <text x="27" y="43">M</text>
+    <text x="86" y="43">E</text>
+  </g>
+  <text x="60" y="88" text-anchor="middle" fill="#1f2945" font-family="Georgia, serif" font-size="15" font-weight="800" letter-spacing="4">M.E.N.T.E</text>
+</svg>
